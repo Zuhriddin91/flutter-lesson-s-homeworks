@@ -6,7 +6,7 @@ class MensWearSecondPage extends StatefulWidget {
 }
 
 class _MensWearSecondPageState extends State<MensWearSecondPage> {
-  Size _size;
+  Size? _size;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class _MensWearSecondPageState extends State<MensWearSecondPage> {
           padding: EdgeInsets.all(5),
           children: [
             Container(
-              height: _size.height * 0.9,
+              height: _size!.height * 0.9,
               padding: EdgeInsets.only(bottom: 20),
               alignment: Alignment.topCenter,
               child: Column(
@@ -94,7 +94,7 @@ class _MensWearSecondPageState extends State<MensWearSecondPage> {
               ),
             ),
             Container(
-              height: _size.height * 0.9,
+              height: _size!.height * 0.9,
               padding: EdgeInsets.only(bottom: 50),
               alignment: Alignment.center,
               child: Column(
@@ -129,7 +129,7 @@ class _MensWearSecondPageState extends State<MensWearSecondPage> {
               ),
             ),
             Container(
-              height: _size.height * 0.9,
+              height: _size!.height * 0.9,
               padding: EdgeInsets.only(bottom: 20),
               alignment: Alignment.center,
               child: Column(
@@ -164,7 +164,7 @@ class _MensWearSecondPageState extends State<MensWearSecondPage> {
               ),
             ),
             Container(
-              height: _size.height * 0.9,
+              height: _size!.height * 0.9,
               padding: EdgeInsets.only(bottom: 20),
               alignment: Alignment.center,
               child: Column(

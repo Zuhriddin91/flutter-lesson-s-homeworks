@@ -3,14 +3,16 @@ import 'package:portfolio/data/coffee_data_list.dart';
 import 'package:portfolio/data/coffee_second_data.dart';
 import 'package:portfolio/models/cofee_second_model.dart';
 
+import 'coffee_second_page.dart';
+
 class CofeePageView extends StatefulWidget {
   @override
   _CofeePageViewState createState() => _CofeePageViewState();
 }
 
 class _CofeePageViewState extends State<CofeePageView> {
-  int indeks;
-  Size size;
+  int? indeks;
+  Size? size;
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
@@ -25,10 +27,6 @@ class _CofeePageViewState extends State<CofeePageView> {
       ),
     );
   }
-
-
-
-
 
   Widget selectCofee() {
     return Positioned(
@@ -87,44 +85,47 @@ class _CofeePageViewState extends State<CofeePageView> {
                 debugPrint("$indeks"); // OCHIR
                 return Stack(
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(right: 35, bottom: 15),
-                      width: 270,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(30),
-                                topLeft: Radius.circular(30)),
-                            child: Image.asset(
-                              "assets/images/coffee.jpg",
-                              height: 270,
-                              width: 270,
-                              fit: BoxFit.fitHeight,
+                    InkWell(
+                      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> CoffeeSecondPage()));},
+                      child: Container(
+                        margin: EdgeInsets.only(right: 35, bottom: 15),
+                        width: 270,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.white,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(30),
+                                  topLeft: Radius.circular(30)),
+                              child: Image.asset(
+                                "assets/images/coffee.jpg",
+                                height: 270,
+                                width: 270,
+                                fit: BoxFit.fitHeight,
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 30, top: 50),
-                            child: Text(
-                              "${koffee.title}",
-                              style: TextStyle(
-                                  color: Color(0xffa1743b), fontSize: 20, fontWeight: FontWeight.w500),
+                            Padding(
+                              padding: EdgeInsets.only(left: 30, top: 50),
+                              child: Text(
+                                "${koffee.title}",
+                                style: TextStyle(
+                                    color: Color(0xffa1743b), fontSize: 20, fontWeight: FontWeight.w500),
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 30, top: 10),
-                            child: Text(
-                              "${koffee.subtitle}",
-                              style: TextStyle(
-                                  color: Colors.black, fontSize: 44, fontWeight: FontWeight.bold),
-                            ),
-                          )
-                        ],
+                            Padding(
+                              padding: EdgeInsets.only(left: 30, top: 10),
+                              child: Text(
+                                "${koffee.subtitle}",
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 44, fontWeight: FontWeight.bold),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                     Positioned(
@@ -164,7 +165,7 @@ class _CofeePageViewState extends State<CofeePageView> {
 
   Widget bottomRow() {
     return Padding(
-          padding: EdgeInsets.only(top: size.height * 0.9, left: 60),
+          padding: EdgeInsets.only(top: size!.height * 0.9, left: 60),
           child: Row(
             children: [
               Container(

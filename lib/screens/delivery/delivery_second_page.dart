@@ -10,7 +10,7 @@ class DeliverySecondPage extends StatefulWidget {
 }
 
 class _DeliverySecondPageState extends State<DeliverySecondPage> {
-  Size _size;
+  Size? _size;
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +32,14 @@ class _DeliverySecondPageState extends State<DeliverySecondPage> {
 
   appBar2() => SliverToBoxAdapter(
     child: Container(
-      width: _size.width,
+      width: _size!.width,
       height: 325.0,
       //color: Colors.pink,
       child: Stack(
         children: [
           Container(
-            width: _size.width,
-            height: _size.width * 0.67,
+            width: _size!.width,
+            height: _size!.width * 0.67,
             decoration: BoxDecoration(
               color: Colors.deepOrange,
               borderRadius: BorderRadius.only( bottomRight: Radius.circular(40), bottomLeft:  Radius.circular(40))
@@ -85,7 +85,7 @@ class _DeliverySecondPageState extends State<DeliverySecondPage> {
                 ),
                 SizedBox(height: 20,),
                 Container(
-                  width: _size.width,
+                  width: _size!.width,
                   decoration: BoxDecoration(
                     color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
@@ -110,7 +110,7 @@ class _DeliverySecondPageState extends State<DeliverySecondPage> {
 
                 Container(
                   margin: EdgeInsets.only(top: 16),
-                  width: _size.width,
+                  width: _size!.width,
                   height: 135,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -171,13 +171,13 @@ class _DeliverySecondPageState extends State<DeliverySecondPage> {
                       Icons.list,
                       size: 30,
                       color: Colors.grey,
-                    )),
+                    ), onPressed: () {  },),
                     IconButton(
                         icon: Icon(
                       Icons.grid_view,
                       size: 30,
                       color: Colors.grey,
-                    ))
+                    ), onPressed: () {  },)
                   ],
                 ),
               ),

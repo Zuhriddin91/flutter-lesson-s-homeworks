@@ -5,7 +5,7 @@ import 'package:portfolio/models/sport_model.dart';
 import 'package:portfolio/data/sport_data_list.dart';
 
 class SportSecondPage extends StatelessWidget {
-  Size _size;
+  Size? _size;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class SportSecondPage extends StatelessWidget {
             ),
             Container(
               //padding: EdgeInsets.only(left: 10),
-              width: _size.width,
+              width: _size!.width,
               height: 105,
               child: ListView.builder(
                 //itemExtent: 105,
@@ -78,8 +78,8 @@ class SportSecondPage extends StatelessWidget {
               ),
             ),
             Container(
-              width: _size.width,
-              height: _size.height * 0.62,
+              width: _size!.width,
+              height: _size!.height * 0.62,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -166,8 +166,8 @@ class SportSecondPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: _size.width,
-                    height: _size.height * 0.25,
+                    width: _size!.width,
+                    height: _size!.height * 0.25,
                     decoration: BoxDecoration(
                         color: Colors.grey,
                         image: DecorationImage(
@@ -176,7 +176,7 @@ class SportSecondPage extends StatelessWidget {
                                 "https://i.stack.imgur.com/1XPRz.png"))),
                   ),
                   Container(
-                    width: _size.width,
+                    width: _size!.width,
                     height: 50,
                     padding: EdgeInsets.only(left: 20, right: 20),
                     child: Row(
@@ -273,7 +273,7 @@ class SportSecondPage extends StatelessWidget {
   Widget _rowMark(String text1, String text2) {
     return Container(
       alignment: Alignment.centerLeft,
-      width: _size.width * 0.22,
+      width: _size!.width * 0.22,
       height: 55.0,
       color: Colors.transparent,
       child: Column(

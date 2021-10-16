@@ -14,8 +14,8 @@ class CoffeeInfoPage extends StatefulWidget {
 }
 
 class _CoffeeInfoPageState extends State<CoffeeInfoPage> {
-  Size _size;
-  Coffee _coffee;
+  Size? _size;
+  Coffee? _coffee;
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +30,14 @@ class _CoffeeInfoPageState extends State<CoffeeInfoPage> {
             // ---- first box ----
 
             Container(
-              height: _size.height * 0.6,
-              width: _size.width,
+              height: _size!.height * 0.6,
+              width: _size!.width,
               alignment: Alignment.bottomCenter,
               decoration: BoxDecoration(
                 color: Colors.brown.shade600,
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(_coffee.rasmUrl),
+                  image: NetworkImage(_coffee!.rasmUrl),
                 ),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30.0),
@@ -98,8 +98,8 @@ class _CoffeeInfoPageState extends State<CoffeeInfoPage> {
                     shadowStrength: 1,
                     borderRadius: BorderRadius.circular(30.0),
                     child: Container(
-                      height: _size.height * 0.2,
-                      width: _size.width,
+                      height: _size!.height * 0.2,
+                      width: _size!.width,
                       decoration: BoxDecoration(
                         // color: Colors.brown.shade800,
                         borderRadius: BorderRadius.circular(30.0),
@@ -114,14 +114,14 @@ class _CoffeeInfoPageState extends State<CoffeeInfoPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  _coffee.nomi,
+                                  _coffee!.nomi,
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
                                       fontSize: 27),
                                 ),
                                 Text(
-                                  _coffee.tarkib,
+                                  _coffee!.tarkib,
                                   style: TextStyle(
                                       color: Colors.white70, fontSize: 18),
                                 ),
@@ -131,7 +131,7 @@ class _CoffeeInfoPageState extends State<CoffeeInfoPage> {
                                 Row(
                                   children: [
                                     Text(
-                                      "⭐  ${_coffee.rating.toString()} ",
+                                      "⭐  ${_coffee!.rating.toString()} ",
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           color: Colors.white,
@@ -288,7 +288,7 @@ class _CoffeeInfoPageState extends State<CoffeeInfoPage> {
                       primary: Colors.white12,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
-                      minimumSize: Size(_size.width * 0.25, 40),
+                      minimumSize: Size(_size!.width * 0.25, 40),
                       side: BorderSide(
                         color: _buttonSideColor1,
                       ),
@@ -310,7 +310,7 @@ class _CoffeeInfoPageState extends State<CoffeeInfoPage> {
                       primary: Colors.white12,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
-                      minimumSize: Size(_size.width * 0.25, 40),
+                      minimumSize: Size(_size!.width * 0.25, 40),
                       side: BorderSide(
                         color: _buttonSideColor2,
                       ),
@@ -332,7 +332,7 @@ class _CoffeeInfoPageState extends State<CoffeeInfoPage> {
                       primary: Colors.white12,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
-                      minimumSize: Size(_size.width * 0.25, 40),
+                      minimumSize: Size(_size!.width * 0.25, 40),
                       side: BorderSide(
                         color: _buttonSideColor3,
                       ),
@@ -363,7 +363,7 @@ class _CoffeeInfoPageState extends State<CoffeeInfoPage> {
                                 style: TextStyle(
                                     fontSize: 20, color: Colors.orange)),
                             TextSpan(
-                                text: (_coffee.narx * cofeRazmer).toStringAsFixed(2),
+                                text: (_coffee!.narx * cofeRazmer).toStringAsFixed(2),
                                 style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.white,
@@ -379,7 +379,7 @@ class _CoffeeInfoPageState extends State<CoffeeInfoPage> {
                       primary: Colors.orange.shade800,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
-                      minimumSize: Size(_size.width * 0.6, 50),
+                      minimumSize: Size(_size!.width * 0.6, 50),
                     ),
                     child: Text(
                       "Buy Now",

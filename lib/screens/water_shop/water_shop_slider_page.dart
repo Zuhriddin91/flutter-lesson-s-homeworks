@@ -27,15 +27,15 @@ class _StepperState extends State<StepperExam> {
         currentStep: _activStep,
         onStepContinue: (){
           if(_activStep < _steplar().length -1 ){
-            if (_keyUserName.currentState.validate() && _activStep == 0) {
+            if (_keyUserName.currentState!.validate() && _activStep == 0) {
               setState(() {
                 _activStep ++;
               });
-            }else if (_keyUserName.currentState.validate() && _activStep == 1) {
+            }else if (_keyUserName.currentState!.validate() && _activStep == 1) {
               setState(() {
                 _activStep ++;
               });
-            }else if (_keyUserName.currentState.validate() && _activStep == 2) {
+            }else if (_keyUserName.currentState!.validate() && _activStep == 2) {
               setState(() {
                 _activStep ++;
               });
@@ -63,7 +63,7 @@ class _StepperState extends State<StepperExam> {
               controller: _usernameController,
               key: _keyUserName,
               validator: (text) {
-                if (text.length < 5) {
+                if (text!.length < 5) {
                   return "Kamida 5 ta belgi kiriting !";
                 }
               },
@@ -84,7 +84,7 @@ class _StepperState extends State<StepperExam> {
               controller: _emailController,
               key: _keyEmail,
               validator: (text) {
-                if (text.length < 5) {
+                if (text!.length < 5) {
                   return "Kamida 5 ta belgi kiriting !";
                 }
               },
@@ -104,7 +104,7 @@ class _StepperState extends State<StepperExam> {
           child: TextFormField(
             key: _keyPassword,
             validator: (text) {
-              if (text.length < 5) {
+              if (text!.length < 5) {
                 return "Kamida 5 ta belgi kiriting !";
               }
             },

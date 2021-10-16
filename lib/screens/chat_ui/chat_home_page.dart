@@ -30,7 +30,7 @@ class _ChatHomePageState extends State<ChatHomePage> {
   }
 
   String _checkbutton = "";
-  int indeks;
+  int? indeks;
   int bottomItem = 0;
 
   _accountBody() => SafeArea(

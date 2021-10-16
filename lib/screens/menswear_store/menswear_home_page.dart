@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/home.dart';
 import 'package:portfolio/screens/menswear_store/menswear_second_page.dart';
 
 class MensWearHome extends StatelessWidget {
@@ -9,7 +8,10 @@ class MensWearHome extends StatelessWidget {
       drawer: Drawer(
         child: IconButton(
           icon: Icon(Icons.arrow_forward_ios),
-          onPressed: () {return Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => MensWearSecondPage()));},
+          onPressed: () {
+            // return Navigator.pushReplacement(context,
+            //     MaterialPageRoute(builder: (context) => MensWearSecondPage()));
+          },
         ),
       ),
       appBar: AppBar(

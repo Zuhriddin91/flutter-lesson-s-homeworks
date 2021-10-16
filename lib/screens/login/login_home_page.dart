@@ -6,7 +6,7 @@ import 'login_last_page.dart';
 import 'login_second_page.dart';
 
 class LoginHomePage extends StatelessWidget {
-  Size _size;
+  Size? _size;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +20,8 @@ class LoginHomePage extends StatelessWidget {
           children: [
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20),
-              width: _size.width,
-              height: _size.height * 0.65,
+              width: _size!.width,
+              height: _size!.height * 0.65,
               alignment: Alignment.topCenter,
               decoration: BoxDecoration(
                 image: DecorationImage(

@@ -5,7 +5,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 
 class LoginLastPage extends StatelessWidget {
-  Size _size;
+  Size? _size;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class LoginLastPage extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(left: 30, top: 0, right: 30, bottom: 10),
               alignment: Alignment.center,
-              width: _size.width,
+              width: _size!.width,
               height: 270,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,7 +75,7 @@ class LoginLastPage extends StatelessWidget {
   
   Widget appBar() => Container(
         padding: EdgeInsets.symmetric(horizontal: 40),
-        height: _size.height * 0.1,
+        height: _size!.height * 0.1,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -99,7 +99,7 @@ class LoginLastPage extends StatelessWidget {
       );
 
   Widget rasmBolim() => Container(
-        width: _size.width,
+        width: _size!.width,
         height: 250,
         color: Colors.transparent,
         child: Stack(

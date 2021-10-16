@@ -12,7 +12,7 @@ class CoffeShopHomePage extends StatefulWidget {
 }
 
 class _CoffeShopHomePageState extends State<CoffeShopHomePage> {
-  Size _size;
+  Size? _size;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class _CoffeShopHomePageState extends State<CoffeShopHomePage> {
         backgroundColor: Colors.transparent,
         iconTheme: IconThemeData(color: Colors.white),
         bottom: PreferredSize(
-          preferredSize: Size(_size.width, _size.height * 0.3),
+          preferredSize: Size(_size!.width, _size!.height * 0.3),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: Column(
@@ -65,8 +65,8 @@ class _CoffeShopHomePageState extends State<CoffeShopHomePage> {
                   child: Container(
                     alignment: Alignment.centerLeft,
                     padding: EdgeInsets.symmetric(horizontal: 16.0),
-                    width: _size.width,
-                    height: _size.height * 0.06,
+                    width: _size!.width,
+                    height: _size!.height * 0.06,
                     decoration: BoxDecoration(
                         color: Colors.black38,
                         borderRadius: BorderRadius.circular(12.0)),
@@ -152,8 +152,8 @@ class _CoffeShopHomePageState extends State<CoffeShopHomePage> {
           children: [
             Container(
               alignment: Alignment.topRight,
-              width: _size.width * 0.36,
-              height: _size.width * 0.36,
+              width: _size!.width * 0.36,
+              height: _size!.width * 0.36,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
@@ -194,7 +194,7 @@ class _CoffeShopHomePageState extends State<CoffeShopHomePage> {
               ),
             ),
             Container(
-              width: _size.width * 0.36,
+              width: _size!.width * 0.36,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -245,8 +245,8 @@ class _CoffeShopHomePageState extends State<CoffeShopHomePage> {
   // Coffee`ning kategoriyalarini ko`rsatadi
 
   Container _getCoffeeCategory() => Container(
-        height: _size.height * 0.05,
-        width: _size.width * 1.0,
+        height: _size!.height * 0.05,
+        width: _size!.width * 1.0,
         child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: _categoryList.length,
@@ -268,8 +268,8 @@ class _CoffeShopHomePageState extends State<CoffeShopHomePage> {
   SliverList _getCoffeeListVertical() => SliverList(
         delegate: SliverChildListDelegate(coffeeList.map(
               (coffee) => Container(
-                width: _size.width * 1.0,
-                height: _size.height * 0.16,
+                width: _size!.width * 1.0,
+                height: _size!.height * 0.16,
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
                 margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 6.0),
                 decoration: BoxDecoration(
@@ -287,8 +287,8 @@ class _CoffeShopHomePageState extends State<CoffeShopHomePage> {
         children: [
           Container(
             margin: EdgeInsets.only(right: 16.0),
-            height: _size.width * 0.25,
-            width: _size.width * 0.25,
+            height: _size!.width * 0.25,
+            width: _size!.width * 0.25,
             decoration: BoxDecoration(
               color: Colors.orange,
               borderRadius: BorderRadius.circular(16.0),
@@ -297,7 +297,7 @@ class _CoffeShopHomePageState extends State<CoffeShopHomePage> {
             ),
           ),
           Container(
-              width: _size.width * 0.5,
+              width: _size!.width * 0.5,
               alignment: Alignment.topLeft,
               child: Text(
                 "5 Coffee Beans You Must Try!",

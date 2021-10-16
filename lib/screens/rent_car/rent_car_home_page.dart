@@ -7,7 +7,7 @@ class RentCarHomePage extends StatefulWidget {
 }
 
 class _RentCarHomePageState extends State<RentCarHomePage> {
-  Size size;
+  Size? size;
 
   @override
   Widget build(BuildContext context) {

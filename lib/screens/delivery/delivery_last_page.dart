@@ -21,7 +21,7 @@ class _DeliveryLastPageState extends State<DeliveryLastPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton(icon: Icon(Icons.clear), color: Colors.black,),
+                    IconButton(icon: Icon(Icons.clear), color: Colors.black, onPressed: () {},),
                     Text("Filter", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
                     Text("Reset all", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.deepOrange),),
                   ],

@@ -8,7 +8,7 @@ class ClothStoreSecondPage extends StatefulWidget {
 }
 
 class _ClothStoreSecondPageState extends State<ClothStoreSecondPage> {
-  Size _size;
+  late Size _size;
 
   @override
   Widget build(BuildContext context) {

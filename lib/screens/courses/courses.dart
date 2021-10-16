@@ -4,7 +4,7 @@ import 'package:portfolio/data/courses_data_list.dart';
 import 'package:portfolio/models/courses_model.dart';
 
 class Courses extends StatelessWidget {
-  Size _size;
+  Size? _size;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class Courses extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.amberAccent,
           elevation: 2,
-          toolbarHeight: _size.width * 0.6,
+          toolbarHeight: _size!.width * 0.6,
           leadingWidth: 120,
           leading: Padding(
             padding: const EdgeInsets.only(top: 160.0, left: 20),
@@ -72,8 +72,8 @@ class Courses extends StatelessWidget {
   Widget _listViewMark() => SliverToBoxAdapter(
         child: Container(
           padding: EdgeInsets.only(top: 20),
-          width: _size.width,
-          height: _size.width * 0.65,
+          width: _size!.width,
+          height: _size!.width * 0.65,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: 3,
@@ -119,7 +119,7 @@ class Courses extends StatelessWidget {
 
   Widget _listViewMark2() => SliverToBoxAdapter(
             child: Container(
-              width: _size.width,
+              width: _size!.width,
               height: 330,
               child: ListView.builder(
                   itemCount: courseList.length,
