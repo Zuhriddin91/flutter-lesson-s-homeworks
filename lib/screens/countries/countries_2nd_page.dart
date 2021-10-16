@@ -68,7 +68,6 @@ class _CountriesSecondPageState extends State<Countries2Page> {
         builder: (context, AsyncSnapshot<Weather> snap) {
           if( snap.hasData ) {
             Weather data = snap.data as Weather;
-            debugPrint("Futuredagi data:"+snap.data.toString());
             return Row(
               children: [
                 Container(
@@ -224,7 +223,6 @@ class _CountriesSecondPageState extends State<Countries2Page> {
     var res = await http.get(Uri.parse("https://api.openweathermap.org/data/2.5/weather?q=tashkent&appid=32f9809b858541f09356b674b71cd912"));
     if(res.statusCode == 200){
       var json = jsonDecode(res.body);
-      debugPrint(json);
       return json;
     }else{
       throw Exception("Error ${res.statusCode}");
@@ -232,7 +230,6 @@ class _CountriesSecondPageState extends State<Countries2Page> {
   }
 
   Future<Weather> _weatherMake() async {
-    print("poytaxt: " +cityName);
     var res = await http.get(Uri.parse("https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=32f9809b858541f09356b674b71cd912"));
     if(res.statusCode == 200){
       var json = jsonDecode(res.body);

@@ -78,7 +78,6 @@ class _CountriesHomePageState extends State<CountriesHomePage> {
             onSubmitted: (v) => setState(() {
               if (_textEditingController.text.length >= 1) {
                 country = v.toString();
-                debugPrint(country);
               }
             }),
           ),
@@ -128,7 +127,6 @@ class _CountriesHomePageState extends State<CountriesHomePage> {
           builder: (context, AsyncSnapshot<List<Countries>> countrySnap) {
             if (countrySnap.hasData) {
               var country = countrySnap.data;
-              debugPrint(country![0].name!.common.toString());
               return ListView.builder(
                 padding: EdgeInsets.all(8),
                 physics: BouncingScrollPhysics(),
@@ -137,7 +135,7 @@ class _CountriesHomePageState extends State<CountriesHomePage> {
                 itemExtent: 180,
                 itemBuilder: (context, index) {
                   return FutureBuilder(
-                    future: getUnsplashData("${country[index].name!.common}"),
+                    future: getUnsplashData("${country![index].name!.common}"),
                     builder: (context, AsyncSnapshot unsplashSnap) {
                       return InkWell(
                         child: Hero(
@@ -238,7 +236,6 @@ class _CountriesHomePageState extends State<CountriesHomePage> {
           future: getUnsplashData(country),
           builder: (context, AsyncSnapshot<String> snap) {
             if (snap.hasData) {
-              //debugPrint("unsplash data:" + snap.data!);
               countryImg = snap.data.toString();
               return Container(
                 height: 220,
